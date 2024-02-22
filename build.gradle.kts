@@ -42,6 +42,16 @@ tasks.withType<KotlinCompile> {
 	}
 }
 
+tasks.register<Copy>("copyGitSubmodule") {
+	from("./CONFIG")
+	include("*.yml")
+	into("./src/main/resources")
+}
+
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.named<ProcessResources>("processResources") {
+	dependsOn("copyGitSubmodule")
 }
