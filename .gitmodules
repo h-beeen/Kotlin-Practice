@@ -1,0 +1,3 @@
+[submodule "GGSDG_API/CONFIG"]
+	path = GGSDG_API/CONFIG
+	url = git@github.com:GGSDH/GGSDH_CONFIG.git
